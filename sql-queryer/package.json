@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "build": "cd .. && faas-cli build -f ./sql-queryer.yml",
-    "deploy-local": "cd .. && faas-cli generate -f ./sql-queryer.yml -n magda-openfaas-fn | kubectl apply -f -"
+    "push-gitlab": "cd .. && faas-cli push -f ./sql-queryer-gitlab.yml",
+    "deploy-local": "cd .. && faas-cli generate -f ./sql-queryer.yml | kubectl -n magda-openfaas-fn apply -f -",
+    "deploy-gitlab": "cd .. && faas-cli generate -f ./sql-queryer-gitlab.yml | kubectl -n issue2715-fin-openfaas-fn apply -f -"
   },
   "keywords": [],
   "author": "OpenFaaS Ltd",
